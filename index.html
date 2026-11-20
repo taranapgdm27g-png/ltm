@@ -64,7 +64,7 @@ img{max-width:100%;display:block}
 .kick{display:inline-flex;align-items:center;gap:10px;font-size:.86rem;font-weight:600;color:var(--gold-ink);margin-bottom:18px}
 .kick::before{content:"";width:34px;height:1px;background:var(--gold)}
 .hero h1{font-size:clamp(3.2rem,7.4vw,6rem);line-height:.98;letter-spacing:-.025em}
-.claim{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(1.45rem,2.7vw,2.15rem);line-height:1.22;margin:20px 0 16px;max-width:20ch;color:var(--gold-ink)}
+.claim{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(1.45rem,2.7vw,2.15rem);line-height:1.22;margin:20px 0 16px;max-width:none;color:var(--gold-ink)}
 .claim em{font-style:normal;color:var(--gold-ink)}
 .intro{color:var(--ink2);font-size:1.07rem;max-width:56ch}
 .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
@@ -319,6 +319,120 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .srow,.js .srow .chip{opacity:1!important;transform:none!important;transition:none!important}}
 h1,h2,.claim{text-wrap:balance}
+
+.feed{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:.78rem;font-variant-numeric:tabular-nums}
+.feed li{display:grid;grid-template-columns:6.4rem 1fr auto;gap:8px;align-items:center;padding:6px 9px;border-radius:8px;background:var(--card2);border:1px solid var(--line2);color:var(--ink2);animation:fin .35s ease}
+.feed li b{color:var(--ink);font-weight:600}
+@keyframes fin{from{opacity:0;transform:translateY(-4px)}}
+.remarks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.remarks li{font-size:.72rem!important;padding:5px 6px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.remarks li{font-size:.78rem;padding:6px 8px;border-radius:8px;border:1px solid var(--line2);color:var(--muted);transition:all .3s}
+.remarks li::before{content:"○ ";color:var(--muted)}
+.remarks li.on{border-color:var(--good);color:var(--ink);background:var(--good-t)}.remarks li.on::before{content:"✓ ";color:var(--good)}
+.evst{display:flex;align-items:center;gap:12px;margin:0;font-size:.78rem;color:var(--muted)}
+.evst .lg{display:inline-flex;align-items:center;gap:6px}.evst .lg i{display:inline-block;width:16px;height:0;border-top:2px dashed var(--muted)}.evst .lg i.g{border-top:2.5px solid var(--gold);margin-left:8px}
+.age p{font-size:.76rem;color:var(--muted);margin:0 0 6px}.age .legend{margin-top:8px}
+.a1{background:var(--good)}.a2{background:var(--gold)}.a3{background:var(--warn)}.a4{background:var(--coral)}
+.ctl-h{font-size:.76rem;color:var(--muted);margin:0}
+.ctl{display:flex;gap:8px;flex-wrap:wrap}
+.mini{font:600 .8rem/1 "IBM Plex Sans",sans-serif;padding:8px 13px;border-radius:999px;border:1px solid var(--gold);background:var(--gold);color:#0A1428;cursor:pointer}
+.mini.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.mini:hover{filter:brightness(1.08)}.mini:disabled{opacity:.5;cursor:default}
+.rng{display:grid;grid-template-columns:6.4rem minmax(0,1fr) 4.4rem;gap:10px;align-items:center;font-size:.8rem;color:var(--ink2)}
+.rng input{width:100%;accent-color:var(--gold)}
+.rng output{text-align:right;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.chk{display:flex;gap:8px;align-items:center;font-size:.82rem;color:var(--ink2);cursor:pointer}.chk input{accent-color:var(--gold);width:16px;height:16px}
+.feed button.ap{font:600 .72rem/1 "IBM Plex Sans",sans-serif;padding:5px 9px;border-radius:999px;border:1px solid var(--coral);background:var(--coral-t);color:var(--coral);cursor:pointer}
+.feed button.ap:hover{background:var(--coral);color:#fff}
+.feed .more{display:block;text-align:center;color:var(--muted);background:none;border:0;padding:2px 0;font-size:.76rem}
+.tests{display:flex;flex-wrap:wrap;gap:6px}
+.tests button{font:500 .76rem/1.2 "IBM Plex Sans",sans-serif;padding:5px 10px;border-radius:999px;border:1px solid var(--line2);color:var(--muted);background:transparent;cursor:pointer;transition:all .2s}
+.tests button[aria-pressed="true"]{border-color:var(--gold);color:var(--ink);background:var(--gold-t)}
+.tests button[aria-pressed="true"]::before{content:"✓ ";color:var(--gold)}
+.bars6 button.pill{border:0;cursor:pointer;font:600 .74rem/1 "IBM Plex Sans",sans-serif}
+.bars6 button.pill.A:hover,.bars6 button.pill.R:hover{outline:1px solid currentColor}
+.bars6 li.sent .tr i.r{box-shadow:0 0 0 1px var(--good)}
+/* live skills dashboard */
+.dash{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tile{background:var(--card);border:1px solid var(--line2);border-radius:18px;padding:18px 20px 16px;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.tile::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,var(--coral),var(--gold));opacity:.85}
+.tile header{display:flex;flex-direction:column;gap:2px}
+.tile h3{font-size:1.18rem;color:var(--ink)}
+.tile header a{font-size:.8rem;color:var(--muted);text-decoration:none}.tile header a:hover{color:var(--gold-ink)}
+.tile .big b{display:block;font-family:"Fraunces",serif;font-size:2.5rem;line-height:1;color:var(--gold-ink);font-variant-numeric:tabular-nums}
+.tile .big span{font-size:.84rem;color:var(--ink2)}.tile .big em{font-style:normal;font-variant-numeric:tabular-nums}
+.stack{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--line2)}
+.stack i{display:block;height:100%;width:0;transition:width .25s linear}
+.s1{background:var(--good)}.s2{background:var(--warn)}.s3{background:var(--gold)}.s4{background:var(--coral)}
+.legend{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;font-size:.82rem;color:var(--ink2)}
+.legend li{display:flex;align-items:center;gap:7px}.legend i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.legend b{margin-left:auto;color:var(--ink);font-variant-numeric:tabular-nums}
+.tile .foot{font-size:.8rem;color:var(--muted);margin:auto 0 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tile .foot b{color:var(--ink)}
+.pill{display:inline-block;font:600 .74rem/1 "IBM Plex Sans",sans-serif;padding:5px 9px;border-radius:999px}
+.pill.G{background:var(--good-t);color:var(--good)}.pill.A{background:var(--warn-t);color:var(--warn)}.pill.R{background:var(--bad-t);color:var(--bad)}
+.spark{width:100%;height:92px;display:block}
+.spark .line{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linejoin:round}
+.spark .area{fill:var(--gold-t)}
+.spark circle{fill:var(--coral)}
+.spark .pv{fill:none;stroke:var(--muted);stroke-width:1.5;stroke-dasharray:4 4}
+.spark .evl{fill:none;stroke:var(--gold);stroke-width:2.5}
+.spark .nowl{stroke:var(--coral);stroke-width:1.5;stroke-dasharray:3 3}
+.row3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.row3.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.row3>div{background:var(--card2);border:1px solid var(--line2);border-radius:10px;padding:8px 10px}
+.row3 span{display:block;font-size:.72rem;color:var(--muted)}
+.row3 b{font-family:"Fraunces",serif;font-size:1.05rem;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.race{display:flex;flex-direction:column;gap:12px}
+.lane{display:grid;grid-template-columns:6.6rem minmax(0,1fr) 4.6rem;gap:10px;align-items:center;font-size:.84rem;color:var(--ink2)}
+.lane b{font-variant-numeric:tabular-nums;color:var(--ink);text-align:right;font-weight:600}
+.track{height:14px;background:var(--line2);border-radius:7px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:rgba(255,94,79,.7);border-radius:7px}
+.lane.auto .track i{background:var(--good)}
+.scan{height:8px;background:var(--line2);border-radius:4px;overflow:hidden}
+.scan i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--coral))}
+.tests{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.tests li{font-size:.76rem;padding:4px 9px;border-radius:999px;border:1px solid var(--line2);color:var(--muted);transition:all .3s}
+.tests li.on{border-color:var(--gold);color:var(--ink);background:var(--gold-t)}
+.bars6{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.bars6 li{display:grid;grid-template-columns:5.6rem minmax(0,1fr) 3.4rem;gap:8px;align-items:center;font-size:.8rem;color:var(--ink2)}
+.bars6 .tr{position:relative;height:10px;background:var(--line2);border-radius:5px;overflow:hidden}
+.bars6 .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:5px}
+.bars6 .tr i.c{background:var(--chart-base)}.bars6 .tr i.r{background:var(--gold)}
+.bars6 .pill{text-align:center;padding:4px 0}
+.dnote{font-size:.8rem;color:var(--muted);margin:14px 0 0}
+.evid{margin-top:22px;border:1px solid var(--line2);border-radius:16px;background:var(--card2)}
+.evid>summary{cursor:pointer;padding:16px 22px;font-weight:600;color:var(--gold-ink);list-style:none}
+.evid>summary::-webkit-details-marker{display:none}
+.evid>summary::after{content:"+";float:right;font-size:1.2rem;line-height:1}
+.evid[open]>summary::after{content:"–"}
+.evid .jd{margin:0 16px 16px}
+/* hero exploring line */
+.now{display:flex;align-items:center;gap:10px;margin:14px 0 0;font-size:.98rem;color:var(--ink)}
+.now .nl{font-size:.74rem;font-weight:600;letter-spacing:.02em;color:#0A1428;background:var(--gold);border-radius:999px;padding:4px 10px}
+#nowt{font-weight:500;color:var(--gold-ink)}
+.caret{width:2px;height:1.1em;background:var(--coral);display:inline-block;margin-left:-6px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.caret{animation:none}}
+@media (max-width:1060px){.dash{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){.dash{grid-template-columns:1fr}.row3.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* project accents */
+:root,[data-theme="dark"]{--a-gold:#D4AF6A;--a-sky:#5BB8E8;--a-mint:#4CC79A;--a-violet:#A58BFF;--a-coral:#FF6F61}
+[data-theme="light"]{--a-gold:#9C7430;--a-sky:#1F6E9C;--a-mint:#1E7A52;--a-violet:#6A4FC8;--a-coral:#D2402F}
+.c-gold{--ac:var(--a-gold)}.c-sky{--ac:var(--a-sky)}.c-mint{--ac:var(--a-mint)}.c-violet{--ac:var(--a-violet)}.c-coral{--ac:var(--a-coral)}
+#work .w{position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+#work .w::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--ac),color-mix(in srgb,var(--ac) 25%,transparent))}
+#work .w::after{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--ac) 16%,transparent),transparent);pointer-events:none}
+#work .w:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--ac) 50%,transparent);box-shadow:var(--shadow)}
+#work .w .tag{align-self:flex-start;color:var(--ac);background:color-mix(in srgb,var(--ac) 14%,transparent);border:1px solid color-mix(in srgb,var(--ac) 30%,transparent);padding:4px 11px;border-radius:999px;margin-bottom:10px}
+#work .w .did b{color:var(--ac)}
+#work .figs{gap:10px}
+#work .fig{background:var(--card2);border:1px solid var(--line2);border-left:3px solid var(--ac);border-radius:10px;padding:9px 13px;min-width:9.5rem}
+#work .fig b,#work .orv .figs .fig b{color:var(--ac)}
+#work .file svg{color:var(--ac)}#work .file:hover{border-color:var(--ac)}
+#work details summary{color:var(--ac)}
+#work .group{display:flex;align-items:center;gap:12px}
+#work .group::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
 </style>
 </head>
 <body>
@@ -343,8 +457,8 @@ h1,h2,.claim{text-wrap:balance}
     <div>
       <p class="kick">PGDM Finance and Analytics, Great Lakes Gurgaon, 2027</p>
       <h1>Tarana Bansal</h1>
-      <p class="claim">An English Honours graduate who reads balance sheets.</p>
-      <p class="intro">I was a subject topper who chose English over B.Com to see the world from other people's perspectives, then came to finance for the numbers behind it. At Paytm I put both to work: SAP reconciliation, leadership MIS and automations that two teams adopted.</p>
+      <p class="claim">Curious about people.<br>Serious about numbers.</p>
+      <p class="intro">After school I had two roads. B.Com (Hons) was the comfortable one, and my marks would have taken me there with ease. I chose the one that would stretch me: English Honours, to understand how people think, argue and decide. It sharpened how I listen, structure ideas and lead a room. Finance was always the destination, and I arrived with a wider lens and a habit of learning by doing. At Paytm, I understood the team's problem first, then automated the fix two teams adopted. And I keep exploring: I have since built a D2C store of my own, just to see how one really runs.</p>
       <div class="ctas"><a class="btn" href="#about">Read my story</a><a class="btn ghost" href="Tarana_Bansal_Resume.pdf" download><svg><use href="#dl"/></svg>Download résumé</a></div>
       <ul class="facts">
         <li><b>~80 hrs</b><span>a month freed at Paytm</span></li>
@@ -402,40 +516,40 @@ h1,h2,.claim{text-wrap:balance}
   <div class="head"><p class="eyebrow">Projects</p><h2>Models, memos and plans you can open</h2></div>
   <h3 class="group">Finance</h3>
   <div class="wk">
-    <article class="w wide"><span class="tag">Valuation and due diligence</span><h3>Larsen &amp; Toubro, read from its filings</h3><p class="meta">Valuation for the FSAV course, team of four; diligence memo written on my own, October 2026</p>
+    <article class="w c-gold wide"><span class="tag">Valuation and due diligence</span><h3>Larsen &amp; Toubro, read from its filings</h3><p class="meta">Valuation for the FSAV course, team of four; diligence memo written on my own, October 2026</p>
       <p class="did"><b>What I did:</b> rebuilt L&amp;T's audited FY25 and FY26 statements, analysed sixteen ratios and a five-year DuPont breakdown, valued the business with a ten-year DCF and peer multiples, then wrote a three-page memo on what the headline numbers leave out.</p>
       <div class="figs"><div class="fig"><b>12.8%</b><span>WACC, Blume-adjusted beta 1.13</span></div><div class="fig"><b>11.0% to 4.1%</b><span>net working capital to sales</span></div><div class="fig"><b>+21%</b><span>contract and other current assets vs 11.8% revenue growth</span></div><div class="fig"><b>8</b><span>red flags ranked, 10 questions for management</span></div></div>
       <details><summary>Read the findings</summary><p>FY26 profit rose 7% (18% recurring), but other income and lower interest supplied 46% of the rise in pre-exceptional profit, and 35% of operating cash flow before lending came from a working-capital release. If net working capital returned to 8% of core revenue, the outflow would be about ₹10,500 crore. The balance sheet is strong; the risks are earnings quality and reversibility, not solvency. At a 12.8% cost of capital the base DCF gives ₹1,772 a share against ₹3,837 in the market, which prices a cost of capital nearer 9 to 10% and a ₹7.4 lakh crore order book.</p></details>
       <div class="files"><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/Larsen_Toubro_FSAV_Model.xlsx"><svg><use href="#doc"/></svg>Valuation model <small>XLSX</small></a><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/LT_Financial_Due_Diligence_Memo.pdf" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Diligence memo <small>PDF</small></a></div></article>
-    <article class="w"><span class="tag">Equity research</span><h3>Dabur India: initiating coverage</h3><p class="meta">FLP live project, October 2026</p>
+    <article class="w c-sky"><span class="tag">Equity research</span><h3>Dabur India: initiating coverage</h3><p class="meta">FLP live project, October 2026</p>
       <p class="did"><b>What I did:</b> built Dabur's three statements from the annual report, forecast to FY31, valued it by DCF and five peers, and ran a reverse DCF to see what the price assumes.</p>
       <div class="figs"><div class="fig"><b>HOLD, ₹395</b><span>target against a price near ₹380</span></div><div class="fig"><b>7.8%</b><span>growth forever implied by the price</span></div></div>
       <div class="files"><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/Dabur_India_Initiation_Report.pdf" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Initiation report <small>PDF</small></a><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/Dabur_Financial_Model.xlsx"><svg><use href="#doc"/></svg>Model <small>XLSX</small></a></div></article>
-    <article class="w"><span class="tag">Feasibility</span><h3>A Grade A warehousing park, Delhi NCR</h3><p class="meta">Independent study from JLL and Colliers data, October 2026</p>
+    <article class="w c-mint"><span class="tag">Feasibility</span><h3>A Grade A warehousing park, Delhi NCR</h3><p class="meta">Independent study from JLL and Colliers data, October 2026</p>
       <p class="did"><b>What I did:</b> sized the market bottom-up and modelled unit economics for a 25-acre, 5.4 lakh sq ft park. Demand is not the constraint; return on cost is. My call: a conditional go.</p>
       <div class="figs"><div class="fig"><b>12.2%</b><span>unlevered IRR vs a 14% hurdle</span></div><div class="fig"><b>₹1.23 Cr</b><span>top land price per acre for 14%</span></div></div>
       <div class="files"><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/NCR_Warehousing_Park_Feasibility.pdf" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Feasibility study <small>PDF</small></a></div></article>
   </div>
   <h3 class="group">Governance, controls and process</h3>
   <div class="wk">
-    <article class="w"><span class="tag">Programme management</span><h3>CareerCompass AI: an 8-month plan</h3><p class="meta">Business Process and Project Management, team of seven, planned in MS Project</p>
+    <article class="w c-violet"><span class="tag">Programme management</span><h3>CareerCompass AI: an 8-month plan</h3><p class="meta">Business Process and Project Management, team of seven, planned in MS Project</p>
       <p class="did"><b>What I did:</b> planned a ₹58.4 lakh, 13-module AI platform: charter, work breakdown, a 19-activity critical path, resource levelling, a probability-times-impact risk register, change control through a steering committee and a weekly-to-monthly governance cadence.</p>
       <div class="figs"><div class="fig"><b>CPI 0.94</b><span>at week 20 triggered a correction</span></div><div class="fig"><b>31 to 29 wks</b><span>crashing only the shared critical path</span></div></div>
       <div class="files"><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/CareerCompass_PMO_Deck.pptx"><svg><use href="#doc"/></svg>Project deck <small>PPTX</small></a></div></article>
-    <article class="w"><span class="tag">Controls and leakage</span><h3>Controls monitoring, procure-to-pay</h3><p class="meta">Analytics project, Python and Power BI, synthetic ledger</p>
+    <article class="w c-coral"><span class="tag">Controls and leakage</span><h3>Controls monitoring, procure-to-pay</h3><p class="meta">Analytics project, Python and Power BI, synthetic ledger</p>
       <p class="did"><b>What I did:</b> coded six control tests on all 12,095 invoices (₹123.8 crore), from duplicates and Benford's Law to three-way match and segregation of duties, built a four-page dashboard and wrote the findings memo.</p>
       <div class="figs"><div class="fig"><b>₹25.5 Cr</b><span>flagged across 1,152 exceptions</span></div><div class="fig"><b>₹1.9 Cr</b><span>duplicate payments: direct leakage</span></div></div>
       <div class="files"><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/CCM_Project_Deck.pdf" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Findings deck <small>PDF</small></a><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/assurance.html" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Live monitor <small>Web</small></a></div></article>
-    <article class="w"><span class="tag">Process analysis</span><h3>Patient Flow HQ</h3><p class="meta">Crest x Grant Thornton case competition, Top 15</p>
+    <article class="w c-sky"><span class="tag">Process analysis</span><h3>Patient Flow HQ</h3><p class="meta">Crest x Grant Thornton case competition, Top 15</p>
       <p class="did"><b>What I did:</b> analysed 100 hospital transport trips across seven departments. The 65% variation in cycle time came from a missing operating mechanism, not a shortage of people, so we proposed a central queue, urgency-based dispatch and SLA escalation.</p>
       <div class="files"><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/Healthcare_Transport_Case.pptx"><svg><use href="#doc"/></svg>Case deck <small>PPTX</small></a></div></article>
-    <article class="w"><span class="tag">AI with a human check</span><h3>Gen AI reconciliation and a prompt library</h3><p class="meta">Gen AI capstone and an independent prompt library</p>
+    <article class="w c-mint"><span class="tag">AI with a human check</span><h3>Gen AI reconciliation and a prompt library</h3><p class="meta">Gen AI capstone and an independent prompt library</p>
       <p class="did"><b>What I did:</b> built a workflow that reads payment emails, matches them to receipts and updates the tracker, with written rules for partial payments and a person for anything unmatched; and ten research prompts, each ending with a check I run myself.</p>
       <div class="files"><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/Financial_Research_Prompt_Library.pdf" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Prompt library <small>PDF</small></a></div></article>
   </div>
   <h3 class="group">Built from scratch</h3>
   <div class="wk">
-    <article class="w wide orv"><span class="tag">Live business and finance studio</span><h3>Orvelle: a D2C fashion brand, from first tap to cap table</h3><p class="meta">Independent build, October 2026: a working mobile store and the finance studio behind it</p>
+    <article class="w c-coral wide orv"><span class="tag">Live business and finance studio</span><h3>Orvelle: a D2C fashion brand, from first tap to cap table</h3><p class="meta">Independent build, October 2026: a working mobile store and the finance studio behind it</p>
       <p class="did"><b>What I did:</b> built a working store whose every order feeds a live finance studio: a cohort-driven operating model (acquisition spend, CAC, repeat behaviour), unit economics, three statements, a DCF against market multiples, working capital from inventory, receivable and payable days, a cap table and an LBO. Then I wrote the investor teaser for a ₹20 crore growth raise.</p>
       <div class="figs"><div class="fig"><b>2.47x</b><span>LTV to CAC, payback in about a month</span></div><div class="fig"><b>Month 6</b><span>EBITDA turns positive on plan</span></div><div class="fig"><b>21%</b><span>of new buyers order again next month</span></div><div class="fig"><b>₹13.2 to ₹53.9 Cr</b><span>net revenue in five years, base case</span></div></div>
       <div class="files"><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/orvelle.html#/home" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Open the store <small>Live</small></a><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/orvelle.html#/admin/finance" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Open the finance studio <small>Live</small></a><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/Project_Orvelle_Teaser.pdf" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Investor teaser <small>PDF</small></a></div></article>
@@ -458,18 +572,71 @@ h1,h2,.claim{text-wrap:balance}
 </div></section>
 
 <section class="sec" id="bring"><div class="wrap">
-  <div class="head"><p class="eyebrow">What I bring</p><h2>Each skill, backed by real work</h2><p>Each line links to the work on this page.</p></div>
+  <div class="head"><p class="eyebrow">Skills</p><h2>My skills, running live</h2><p>Six small dashboards rebuilt from my own work. Click, drag or tick anything, and every number recalculates.</p></div>
+  <div class="dash">
+    <article class="tile" id="d-rec"><header><h3>Reconciliation</h3><a href="#paytm">SAP cash application, Paytm</a></header>
+      <div class="big"><b data-k="pct">0%</b><span>of today's 240 receipts applied</span></div>
+      <div class="stack" aria-hidden="true"><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i></div>
+      <ul class="legend"><li><i class="s1"></i>Full match <b data-k="m">0</b></li><li><i class="s2"></i>Short paid <b data-k="sp">0</b></li><li><i class="s3"></i>TDS deducted <b data-k="tds">0</b></li><li><i class="s4"></i>Unapplied <b data-k="un">0</b></li></ul>
+      <p class="ctl-h">Unapplied receipts: click to apply</p>
+      <ul class="feed" data-k="queue"></ul>
+      <div class="ctl"><button type="button" class="mini" data-k="all">Apply all</button><button type="button" class="mini ghost" data-k="reset">Reset</button></div>
+      <p class="foot">Debtor book vs GL, <b>₹4.7 Cr</b> <span class="pill A" data-k="st">Reconciling</span></p></article>
+
+    <article class="tile" id="d-dso"><header><h3>MIS and working capital</h3><a href="#paytm">Debtor MIS, Paytm</a></header>
+      <div class="big"><b data-k="dso">33</b><span>days sales outstanding, Advertising</span></div>
+      <svg class="spark" viewBox="0 0 300 92" aria-hidden="true"><path class="area" data-k="area"/><path class="line" data-k="line"/><circle r="4" data-k="dot"/></svg>
+      <label class="rng">Month <input type="range" min="0" max="11" step="1" value="0" data-k="m"><output data-k="mon">Apr</output></label>
+      <label class="rng">Monthly billing <input type="range" min="0.5" max="3" step="0.1" value="1.5" data-k="bill"><output data-k="billv">₹1.5 Cr</output></label>
+      <div class="row3"><div><span>Days saved</span><b data-k="saved">0</b></div><div><span>Per day of DSO</span><b data-k="per">₹0.05 Cr</b></div><div><span>Cash freed</span><b data-k="cash">₹0.00 Cr</b></div></div>
+      <div class="age"><p>Ageing mix</p><div class="stack" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i><i class="a4"></i></div><ul class="legend"><li><i class="a1"></i>0–30 days <b data-k="b1">0%</b></li><li><i class="a2"></i>31–60 <b data-k="b2">0%</b></li><li><i class="a3"></i>61–90 <b data-k="b3">0%</b></li><li><i class="a4"></i>Over 90 <b data-k="b4">0%</b></li></ul></div></article>
+
+    <article class="tile" id="d-vba"><header><h3>Process automation</h3><a href="#paytm">MIS commentary engine, Paytm</a></header>
+      <div class="race"><div class="lane"><span>By hand</span><div class="track"><i data-k="manbar"></i></div><b data-k="man">0:00:00</b></div>
+      <div class="lane auto"><span>My VBA engine</span><div class="track"><i data-k="vbabar"></i></div><b data-k="vba">0:00:00</b></div></div>
+      <label class="rng">Portfolios <input type="range" min="1" max="12" step="1" value="6" data-k="n"><output data-k="nv">6</output></label>
+      <div class="ctl"><button type="button" class="mini" data-k="run">Run the month-end</button></div>
+      <div class="row3"><div><span>Remarks written</span><b data-k="rem">0 of 6</b></div><div><span>Time cut</span><b data-k="cut">0%</b></div><div><span>Hours back</span><b data-k="back">0 hrs</b></div></div>
+      <ul class="remarks" data-k="rl"></ul>
+      <p class="foot">It flags balances over 90 days, reads the ETAs and writes each portfolio's remarks into the MIS.</p></article>
+
+    <article class="tile" id="d-ccm"><header><h3>Controls and leakage</h3><a href="#work">Procure-to-pay controls project</a></header>
+      <div class="big"><b data-k="inv">0</b><span>of 12,095 invoices tested (₹123.8 Cr)</span></div>
+      <div class="scan" aria-hidden="true"><i data-k="scanbar"></i></div>
+      <p class="ctl-h">Switch tests on or off</p>
+      <div class="tests" data-k="tests"></div>
+      <div class="row3"><div><span>Exceptions</span><b data-k="exc">0</b></div><div><span>Value flagged</span><b data-k="val">₹0.0 Cr</b></div><div><span>Tests on</span><b data-k="on">0 of 5</b></div></div>
+      <div class="ctl"><button type="button" class="mini" data-k="rescan">Run the scan again</button></div></article>
+
+    <article class="tile" id="d-ev"><header><h3>Project governance</h3><a href="#work">CareerCompass AI, MS Project</a></header>
+      <svg class="spark" viewBox="0 0 300 92" aria-hidden="true"><path class="pv" data-k="pv"/><path class="evl" data-k="ev"/><line class="nowl" data-k="nowl" y1="4" y2="88"/></svg>
+      <label class="rng">Week <input type="range" min="1" max="31" step="1" value="1" data-k="w"><output data-k="wv">1</output></label>
+      <label class="chk"><input type="checkbox" checked data-k="fix"> Crash the critical path at week 20</label>
+      <div class="row3 four"><div><span>Week</span><b data-k="wk">1</b></div><div><span>CPI</span><b data-k="cpi">1.00</b></div><div><span>SPI</span><b data-k="spi">1.00</b></div><div><span>Finish</span><b data-k="fin">wk 31</b></div></div>
+      <p class="evst"><span class="pill G" data-k="evpill">On plan</span><span class="lg"><i class="d"></i>Planned <i class="g"></i>Earned</span></p>
+      <p class="foot" data-k="evnote">Planned value against earned value on a ₹58.4 lakh, 8-month plan.</p></article>
+
+    <article class="tile" id="d-eta"><header><h3>Stakeholder follow-up</h3><a href="#paytm">ETA vs collections tracker, Paytm</a></header>
+      <div class="big"><b data-k="coll">0%</b><span>of committed collections realised, day <em data-k="day">1</em> of 30</span></div>
+      <label class="rng">Day <input type="range" min="1" max="30" step="1" value="1" data-k="d"><output data-k="dv">1</output></label>
+      <ul class="bars6" data-k="rows"></ul>
+      <p class="foot" data-k="etanote">Click a portfolio's status to send its HOD a reminder.</p></article>
+  </div>
+  <p class="dnote">Every tile is live: click, drag or tick and it recalculates. Totals come from my own work; individual receipts, months, test splits and portfolio paths are simulated so you can try each model.</p>
+  <details class="evid"><summary>See every skill against the work, line by line</summary>
   <div class="jd"><h3>Finance, reporting and control</h3><ul><li><span class="req">Financial tracking, reporting and governance</span><span class="ev">Maintained the Executive Debtors Dashboard behind Paytm's monthly leadership MIS: ageing, DSO, provisioning and collection against target.</span><a class="go" href="#paytm">Paytm</a></li><li><span class="req">Management reports, dashboards, trackers and presentations</span><span class="ev">A VBA engine that writes the MIS commentary (4 hours to under a minute); a four-page Power BI controls dashboard; leadership decks and memos.</span><a class="go" href="#paytm">Frameworks</a></li><li><span class="req">Trends, variances, risks and revenue or cost leakage</span><span class="ev">Flagged ₹25.5 Cr across 1,152 exceptions, including ₹1.9 Cr of duplicate payments; my diligence memo on an engineering and construction major flags unbilled work growing faster than revenue.</span><a class="go" href="#work">Controls</a></li><li><span class="req">Budgeting, forecasting, margins, billing follow-up and reconciliations</span><span class="ev">Owned 10% of the team's collection target; automated billing recovery notices (83% faster); reconciled the debtor book to a ₹4.7 Cr GL balance.</span><a class="go" href="#paytm">Paytm</a></li><li><span class="req">Coordination with delivery, finance, sales and workforce teams</span><span class="ev">Worked daily with business leads, HODs and POD leads; one-click updates replaced four rounds of manual emails each cycle.</span><a class="go" href="#paytm">Paytm</a></li><li><span class="req">Resource, demand, utilisation and hiring reporting</span><span class="ev">Modelled in the business review cockpit: utilisation, bench, open demand and timesheet compliance by month.</span><a class="go" href="#studio">Cockpit</a></li><li><span class="req">Process documentation, SOPs and governance records</span><span class="ev">Documented all five Paytm frameworks step by step in a 40-page report, and recommended an automation SOP.</span><a class="go" href="#paytm">Report</a></li><li><span class="req">Data validation, audits and compliance</span><span class="ev">Merged 23 trackers into one version of the truth; an approval trail on every recovery notice; six procure-to-pay control tests; COBIT 2019.</span><a class="go" href="#work">Controls</a></li><li><span class="req">Automation, analytics and AI-enabled improvement</span><span class="ev">VBA, Apps Script, Python and Power BI in live use; a ticketing system built with Claude Code; a Gen AI reconciliation workflow.</span><a class="go" href="#paytm">Frameworks</a></li></ul></div><div class="jd"><h3>Project governance</h3><ul><li><span class="req">Project plans, milestones, resource trackers and RAID logs</span><span class="ev">CareerCompass AI in MS Project: work breakdown, a 19-activity critical path, resource levelling and a scored risk register.</span><a class="go" href="#work">CareerCompass</a></li><li><span class="req">Status reports, governance dashboards and meeting packs</span><span class="ev">A weekly-to-monthly cadence ending in a steering report; the governance desk here drafts the weekly status note.</span><a class="go" href="#studio">Governance desk</a></li><li><span class="req">Schedule, effort and budget against baselines</span><span class="ev">Earned value at week 20 (CPI 0.94, SPI 0.95) triggered a correction; crashed the schedule from 31 to 29 weeks.</span><a class="go" href="#work">CareerCompass</a></li><li><span class="req">Action closure, change control and escalation</span><span class="ev">Paytm ticketing gave every action an owner, an ETA and an escalation path; CareerCompass sent changes above ₹1 lakh to a steering committee.</span><a class="go" href="#paytm">Ticketing</a></li><li><span class="req">Templates, repositories and lessons learned</span><span class="ev">Standardised 23 trackers into one format; a closure checklist and lessons learned in CareerCompass.</span><a class="go" href="#work">CareerCompass</a></li></ul></div><div class="jd"><h3>Business and process analysis</h3><ul><li><span class="req">Requirements gathering and recommended solutions</span><span class="ev">Turned the GM's brief into a role-based ticketing system the whole team adopted.</span><a class="go" href="#paytm">Ticketing</a></li><li><span class="req">Business process analysis and improvement</span><span class="ev">Timed every receivables step before changing it; root-caused a 65% cycle-time variation in the Crest x Grant Thornton case.</span><a class="go" href="#work">Case</a></li><li><span class="req">Manufacturing and construction domain</span><span class="ev">A ten-year valuation and diligence memo on an engineering, construction and manufacturing group; a feasibility study for a Grade A warehousing park; procure-to-pay controls.</span><a class="go" href="#work">Finance work</a></li><li><span class="req">Documentation, presentations and insights</span><span class="ev">A 40-page internship report, a diligence memo, an equity initiation and case decks.</span><a class="go" href="#work">Work</a></li></ul></div>
   <div class="jd tools"><h3>Skills and tools</h3><div class="chips"><span>Advanced Excel and VBA</span><span>PowerPoint</span><span>Word</span><span>SAP (cash application, GL)</span><span>Power BI</span><span>Python</span><span>MS Project</span><span>Google Apps Script</span><span>Claude Code and Gen AI</span></div>
-  <p class="learn"><b>Learning now:</b> SAP Professional Fundamentals (in progress), then SAP Activate and S/4HANA finance; Jira and SharePoint at a working level.</p></div>
+  <p class="learn"><b>Learning now:</b> SAP Technology Consultant Professional Certificate (in progress), then SAP Activate and S/4HANA finance; Jira and SharePoint at a working level.</p></div>
+
+  </details>
 </div></section>
 
 <section class="sec alt" id="about"><div class="wrap">
-  <div class="head"><p class="eyebrow">About me</p><h2>Why I chose English first, and finance next</h2></div>
+  <div class="head"><p class="eyebrow">About me</p><h2>I follow my curiosity, then I follow it through</h2></div>
   <div class="tell">
-    <p>I have always been a go-getter who keeps learning. At school I was a subject topper with equally strong marks across every subject, and finished with 90.8% in Class XII and 89.2% in Class X.</p>
-    <p>B.Com (Hons) was the obvious next step. I chose English Honours at Delhi University instead, because I wanted a more varied lens and to understand the world from other people's perspectives. Those three years taught me to structure my thinking, tell a clear story with evidence, manage stakeholders and lead a room; they also cured my stage fright.</p>
-    <p>An MBA was always the final step, for the financial literacy to go with it. My PGDM in Finance and Analytics at Great Lakes Gurgaon gives me that, and at Paytm the two came together: the numbers from finance, the people and the writing from English.</p>
+    <p>Exploring has always been how I learn. At school I was a subject topper with equally strong marks across every subject, 90.8% in Class XII and 89.2% in Class X, so the choice after school was wide open.</p>
+    <p>The obvious path was B.Com (Hons). I took English Honours at Delhi University instead, because I wanted to understand how other people see the world before deciding how I would. It taught me to read between the lines, structure an argument, hold a room and work with very different people, and it cured my stage fright.</p>
+    <p>Finance was always where I was heading; I just wanted to arrive with a wider lens. My PGDM in Finance and Analytics gives me the numbers, and the habit of exploring decides what I do with them. At Paytm I timed every step before automating any. Outside class I built a D2C store and its finance studio, ran a food stall to test pricing, and taught coding to Class 7 students, each time to find out how something really works.</p>
   </div>
   <div class="cols" style="margin-top:34px">
     <div><h3>Earlier roles</h3><ul>
@@ -500,7 +667,7 @@ h1,h2,.claim{text-wrap:balance}
 
 <section class="sec" id="certs"><div class="wrap">
   <div class="head"><p class="eyebrow">Certifications</p><h2>Twenty certificates and simulations, and counting</h2></div>
-  <div class="certs"><div class="cg"><h3>SAP and project delivery</h3><ul><li><div><b>SAP Professional Fundamentals</b><small>SAP, Coursera</small></div><span class="st p">In progress</span></li><li><div><b>Google Project Management Professional Certificate</b><small>Google, Coursera</small></div><span class="st e">Earned</span></li><li><div><b>Lean Six Sigma Green Belt</b><small>Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>COBIT 2019 Foundation</b><small>IT governance, Coursera, 2026</small></div><span class="st e">Earned</span></li></ul></div><div class="cg"><h3>Finance and valuation</h3><ul><li><div><b>Equity Research and Financial Modeling Analyst</b><small>FLP live project: Dabur India, 12 weeks</small></div><span class="st e">Earned</span></li><li><div><b>Financial Statement Analysis and Valuation</b><small>Great Lakes PGDM core course: L&T valuation presented</small></div><span class="st e">Earned</span></li><li><div><b>Financial Markets</b><small>Yale University, Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>FinTech: Foundations, Payments and Regulations</b><small>Wharton, 2026</small></div><span class="st e">Earned</span></li><li><div><b>Excel Financial Modeling Mastery: In-Depth Training</b><small>Coursera</small></div><span class="st p">In progress</span></li></ul></div><div class="cg"><h3>Data, analytics and AI</h3><ul><li><div><b>Power BI Data Analyst Professional Certificate</b><small>Microsoft, 2026, 20 weeks</small></div><span class="st e">Earned</span></li><li><div><b>Google Data Analytics Professional Certificate</b><small>Google, 2026, 26 weeks</small></div><span class="st e">Earned</span></li><li><div><b>Python Core to Advanced</b><small>Pregrad</small></div><span class="st e">Earned</span></li></ul></div><div class="cg"><h3>Business, product and clients</h3><ul><li><div><b>Digital Product Management Specialization</b><small>Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>Advanced Customer Relationship Management</b><small>Microsoft, Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>Sales and Marketing Leadership Program</b><small>Live project</small></div><span class="st p">In progress</span></li></ul></div><div class="cg"><h3>Job simulations (Forage)</h3><ul><li><div><b>Investment Banking</b><small>J.P. Morgan</small></div><span class="st e">Completed</span></li><li><div><b>Quantitative Research</b><small>J.P. Morgan</small></div><span class="st e">Completed</span></li><li><div><b>Markets Sales and Trading</b><small>Citi</small></div><span class="st e">Completed</span></li><li><div><b>Investment Banking</b><small>Bank of America</small></div><span class="st e">Completed</span></li><li><div><b>Credit Analyst</b><small>Standard Chartered</small></div><span class="st e">Completed</span></li></ul></div></div>
+  <div class="certs"><div class="cg"><h3>SAP and project delivery</h3><ul><li><div><b>SAP Technology Consultant Professional Certificate</b><small>SAP, Coursera</small></div><span class="st p">In progress</span></li><li><div><b>Google Project Management Professional Certificate</b><small>Google, Coursera</small></div><span class="st e">Earned</span></li><li><div><b>Lean Six Sigma Green Belt</b><small>Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>COBIT 2019 Foundation</b><small>IT governance, Coursera, 2026</small></div><span class="st e">Earned</span></li></ul></div><div class="cg"><h3>Finance and valuation</h3><ul><li><div><b>Equity Research and Financial Modeling Analyst</b><small>FLP live project: Dabur India, 12 weeks</small></div><span class="st e">Earned</span></li><li><div><b>Financial Statement Analysis and Valuation</b><small>Great Lakes PGDM core course: L&T valuation presented</small></div><span class="st e">Earned</span></li><li><div><b>Financial Markets</b><small>Yale University, Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>FinTech: Foundations, Payments and Regulations</b><small>Wharton, 2026</small></div><span class="st e">Earned</span></li><li><div><b>Excel Financial Modeling Mastery: In-Depth Training</b><small>Coursera</small></div><span class="st p">In progress</span></li></ul></div><div class="cg"><h3>Data, analytics and AI</h3><ul><li><div><b>Power BI Data Analyst Professional Certificate</b><small>Microsoft, 2026, 20 weeks</small></div><span class="st e">Earned</span></li><li><div><b>Google Data Analytics Professional Certificate</b><small>Google, 2026, 26 weeks</small></div><span class="st e">Earned</span></li><li><div><b>Python Core to Advanced</b><small>Pregrad</small></div><span class="st e">Earned</span></li></ul></div><div class="cg"><h3>Business, product and clients</h3><ul><li><div><b>Digital Product Management Specialization</b><small>Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>Advanced Customer Relationship Management</b><small>Microsoft, Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>Sales and Marketing Leadership Program</b><small>Live project</small></div><span class="st p">In progress</span></li></ul></div><div class="cg"><h3>Job simulations (Forage)</h3><ul><li><div><b>Investment Banking</b><small>J.P. Morgan</small></div><span class="st e">Completed</span></li><li><div><b>Quantitative Research</b><small>J.P. Morgan</small></div><span class="st e">Completed</span></li><li><div><b>Markets Sales and Trading</b><small>Citi</small></div><span class="st e">Completed</span></li><li><div><b>Investment Banking</b><small>Bank of America</small></div><span class="st e">Completed</span></li><li><div><b>Credit Analyst</b><small>Standard Chartered</small></div><span class="st e">Completed</span></li></ul></div></div>
 </div></section>
 
 <section class="sec contact" id="contact"><div class="wrap">
@@ -627,6 +794,95 @@ show('ops');
    n.textContent=pre+s+post;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}),{threshold:.4});
  const b=document.getElementById('bars');if(b)io.observe(b);
  if(!RM)$$('.facts b,.fig b,.ledger td.gain').forEach(n=>{if(!/\d/.test(n.textContent))return;n.dataset.t=n.textContent;io.observe(n)})})();
+
+/* hero: exploring now */
+(()=>{const T=['SAP S/4HANA finance','where order-to-cash loses time','what a share price quietly assumes','how a store becomes a cap table','Gen AI that reconciles payments','earned value on a live plan'],el=document.getElementById('nowt');if(!el||RM)return;
+ let i=0,c=T[0].length,del=true;const tick=()=>{const w=T[i];if(del){c--;el.textContent=w.slice(0,c);if(c<=0){del=false;i=(i+1)%T.length}setTimeout(tick,28)}else{c++;el.textContent=T[i].slice(0,c);if(c>=T[i].length){del=true;setTimeout(tick,2200)}else setTimeout(tick,55)}};setTimeout(tick,2600)})();
+
+/* skills dashboard: interactive tiles, with a short intro the first time each is seen */
+(()=>{const q=(t,k)=>t.querySelector('[data-k="'+k+'"]'),inr=(n,d)=>n.toLocaleString('en-IN',{minimumFractionDigits:d,maximumFractionDigits:d});
+ const ease=x=>1-Math.pow(1-Math.min(1,Math.max(0,x)),3);
+ const anim=(dur,f,done)=>{if(RM){f(1);done&&done();return()=>{}}let st=null,stop=false;const step=n=>{if(stop)return;if(st===null)st=n;const p=Math.min(1,(n-st)/dur);f(p);if(p<1)requestAnimationFrame(step);else done&&done()};requestAnimationFrame(step);return()=>{stop=true}};
+ const onFirstView=(t,fn)=>{const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();fn()}},{threshold:.3});io.observe(t)};
+ const R=rng(2026);
+
+ /* 1. reconciliation */
+ (t=>{const N=240;let S;const Q=[];
+  const reset=()=>{S={m:206,sp:14,tds:12};Q.length=0;for(let i=0;i<8;i++)Q.push({utr:String(Math.floor(R()*9e5+1e5)),amt:R()*4.5+.3,k:R()<.6?'m':R()<.5?'sp':'tds'})};
+  const draw=(f=1)=>{const un=Q.length,m=Math.round(S.m*f),sp=Math.round(S.sp*f),td=Math.round(S.tds*f),u=Math.round(un*f),app=m+sp+td;
+   q(t,'pct').textContent=Math.round(app/N*100)+'%';q(t,'m').textContent=m;q(t,'sp').textContent=sp;q(t,'tds').textContent=td;q(t,'un').textContent=u;
+   const st=t.querySelectorAll('.stack i'),w=v=>v/N*100+'%';st[0].style.width=w(m);st[1].style.width=w(sp);st[2].style.width=w(td);st[3].style.width=w(u);
+   const pl=q(t,'st');pl.textContent=un?'Reconciling':'Matched';pl.className='pill '+(un?'A':'G');q(t,'all').disabled=!un;
+   q(t,'queue').innerHTML=Q.slice(0,3).map((r,i)=>`<li><span>UTR ${r.utr}</span><b>₹${inr(r.amt,2)} L</b><button type="button" class="ap" data-i="${i}">Apply</button></li>`).join('')+(un>3?`<li class="more">+${un-3} more</li>`:'')+(un?'':'<li><span>All receipts applied.</span><b></b><span class="pill G">GL matched</span></li>')};
+  const apply=i=>{const r=Q.splice(i,1)[0];if(!r)return;S[r.k]++;draw()};
+  t.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.classList.contains('ap'))apply(+b.dataset.i);else if(b.dataset.k==='all'){while(Q.length)apply(0)}else if(b.dataset.k==='reset'){reset();draw()}});
+  reset();draw(0);onFirstView(t,()=>anim(1600,p=>draw(ease(p))));
+ })(document.getElementById('d-rec'));
+
+ /* 2. DSO and working capital */
+ (t=>{const MON=['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'],D=[33,31,30,27,25,23,21,19,17,15,13,12];
+  const X=i=>10+i*(280/11),Y=v=>84-(v-10)/23*72,m=q(t,'m'),bl=q(t,'bill');
+  const draw=x=>{const k=Math.floor(x),fr=x-k,d=k>=11?12:D[k]+(D[k+1]-D[k])*fr;let pts=[];for(let i=0;i<=k;i++)pts.push([X(i),Y(D[i])]);if(k<11&&fr>0)pts.push([X(x),Y(d)]);
+   const L='M'+pts.map(a=>a.map(v=>v.toFixed(1)).join(',')).join('L');q(t,'line').setAttribute('d',L);q(t,'area').setAttribute('d',L+`L${pts[pts.length-1][0].toFixed(1)},88L10,88Z`);
+   const dot=q(t,'dot');dot.setAttribute('cx',pts[pts.length-1][0]);dot.setAttribute('cy',pts[pts.length-1][1]);
+   const bill=+bl.value,per=bill/30;q(t,'dso').textContent=Math.round(d);q(t,'mon').textContent=MON[Math.round(x)];q(t,'saved').textContent=Math.round(33-d);
+   q(t,'billv').textContent='₹'+inr(bill,1)+' Cr';q(t,'per').textContent='₹'+inr(per,3)+' Cr';q(t,'cash').textContent='₹'+inr((33-d)*per,2)+' Cr';
+   const f=(33-d)/21,B=[44+30*f,22-4*f,12-8*f];B.push(100-B[0]-B[1]-B[2]);const st=t.querySelectorAll('.age .stack i');B.forEach((v,i)=>{st[i].style.width=v+'%';q(t,'b'+(i+1)).textContent=Math.round(v)+'%'})};
+  let stop=()=>{};m.addEventListener('input',()=>{stop();draw(+m.value)});bl.addEventListener('input',()=>draw(+m.value));
+  draw(0);onFirstView(t,()=>{stop=anim(3200,p=>{const x=p*11;m.value=Math.round(x);draw(x)})});
+ })(document.getElementById('d-dso'));
+
+ /* 3. automation race */
+ (t=>{const P=['Advertising','FMCG','D2C','Cashback','Government','Bus','Portfolio 7','Portfolio 8','Portfolio 9','Portfolio 10','Portfolio 11','Portfolio 12'];
+  const hms=s=>{s=Math.round(s);return Math.floor(s/3600)+':'+String(Math.floor(s%3600/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
+  const nI=q(t,'n'),run=q(t,'run');let stop=()=>{};
+  const draw=p=>{const n=+nI.value,MAN=2400*n,VBA=58/6*n,man=Math.min(1,p/.9),vba=Math.min(1,p/.07);
+   q(t,'nv').textContent=n;q(t,'man').textContent=hms(man*MAN);q(t,'vba').textContent=hms(vba*VBA);q(t,'manbar').style.width=man*100+'%';q(t,'vbabar').style.width=Math.max(1,vba*VBA/MAN*100)+'%';
+   const done=Math.floor(vba*n+1e-9);q(t,'rem').textContent=done+' of '+n;q(t,'cut').textContent=(p>=.9?(1-VBA/MAN)*100:Math.min(99.6,p/.9*99.6)).toFixed(1)+'%';q(t,'back').textContent=inr((MAN-VBA)/3600*man,1)+' hrs';
+   q(t,'rl').innerHTML=P.slice(0,n).map((x,i)=>`<li class="${i<done?'on':''}">${x}</li>`).join('')};
+  const go=()=>{stop();run.disabled=true;stop=anim(4200,draw,()=>run.disabled=false)};
+  run.addEventListener('click',go);nI.addEventListener('input',()=>{stop();run.disabled=false;draw(0)});
+  draw(0);onFirstView(t,go);
+ })(document.getElementById('d-vba'));
+
+ /* 4. controls scan */
+ (t=>{const T=[['Duplicate payments',214,1.9],['Approval-threshold splits',236,5.4],["Benford's Law",198,3.9],['Three-way match',373,10.8],['Segregation of duties',131,3.5]],on=T.map(()=>true);
+  q(t,'tests').innerHTML=T.map((x,i)=>`<button type="button" aria-pressed="true" data-i="${i}">${x[0]}</button>`).join('');
+  let k=0,stop=()=>{};
+  const draw=()=>{const E=T.reduce((a,x,i)=>a+(on[i]?x[1]:0),0),V=T.reduce((a,x,i)=>a+(on[i]?x[2]:0),0);
+   q(t,'inv').textContent=inr(Math.round(12095*k),0);q(t,'scanbar').style.width=k*100+'%';q(t,'exc').textContent=inr(Math.round(E*k),0);q(t,'val').textContent='₹'+inr(V*k,1)+' Cr';q(t,'on').textContent=on.filter(Boolean).length+' of 5'};
+  const scan=()=>{stop();stop=anim(2200,p=>{k=ease(p);draw()})};
+  t.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.i!==undefined){const i=+b.dataset.i;on[i]=!on[i];b.setAttribute('aria-pressed',on[i]);draw()}else if(b.dataset.k==='rescan')scan()});
+  draw();onFirstView(t,scan);
+ })(document.getElementById('d-ccm'));
+
+ /* 5. earned value */
+ (t=>{const X=w=>8+(w-1)/30*284,Y=v=>86-v/58.4*78,wI=q(t,'w'),fx=q(t,'fix');let stop=()=>{};
+  const pv=w=>58.4*(1-Math.cos(Math.PI*Math.min(1,(w-1)/30)))/2;
+  const draw=wk=>{const fix=fx.checked;const evf=w=>{if(w<=20)return pv(w)*(1-.05*(w-1)/19);const rec=Math.min(1,(w-20)/9);return fix?Math.min(58.4,pv(w+2*rec)*(.95+.05*rec)):pv(w)*.95};
+   let a='',b='';for(let w=1;w<=31;w+=.5)a+=(a?'L':'M')+X(w).toFixed(1)+','+Y(pv(w)).toFixed(1);for(let w=1;w<=wk;w+=.5)b+=(b?'L':'M')+X(w).toFixed(1)+','+Y(evf(w)).toFixed(1);
+   q(t,'pv').setAttribute('d',a);q(t,'ev').setAttribute('d',b||'M0,0');const nl=q(t,'nowl');nl.setAttribute('x1',X(wk));nl.setAttribute('x2',X(wk));
+   const pre=Math.min(1,(wk-1)/19);q(t,'wv').textContent=Math.round(wk);q(t,'wk').textContent=Math.round(wk);q(t,'cpi').textContent=(1-.06*pre).toFixed(2);q(t,'spi').textContent=(1-.05*pre).toFixed(2);
+   const late=wk>=20;q(t,'fin').textContent='wk '+(late&&fix?29:31);const ep=q(t,'evpill');
+   ep.className='pill '+(wk<14?'G':!late?'A':fix?'G':'R');ep.textContent=wk<14?'On plan':!late?'Drifting':fix?'Correction applied':'No correction';
+   q(t,'evnote').textContent=!late?'Planned value against earned value on a ₹58.4 lakh, 8-month plan.':fix?'Week 20: CPI 0.94 and SPI 0.95 trigger a correction; crashing the critical path moves the finish from week 31 to 29.':'Without the correction, the drift carries on and the plan finishes in week 31.'};
+  wI.addEventListener('input',()=>{stop();draw(+wI.value)});fx.addEventListener('change',()=>draw(+wI.value));
+  draw(1);onFirstView(t,()=>{stop=anim(3600,p=>{const w=1+p*28;wI.value=Math.round(w);draw(w)})});
+ })(document.getElementById('d-ev'));
+
+ /* 6. stakeholder follow-up */
+ (t=>{const PF=[['Advertising',.96],['FMCG',.9],['D2C',.84],['Cashback',.98],['Government',.68],['Bus',.88]],boost=PF.map(()=>0),dI=q(t,'d');let stop=()=>{};
+  q(t,'rows').innerHTML=PF.map((r,i)=>`<li data-i="${i}"><span>${r[0]}</span><span class="tr"><i class="c" style="width:100%"></i><i class="r"></i></span><button type="button" class="pill G">On track</button></li>`).join('');
+  const lis=[...t.querySelectorAll('.bars6 li')];
+  const draw=d=>{let tot=0;PF.forEach((r,i)=>{const base=Math.min(r[1],r[1]*Math.pow((d-1)/29,.8+i*.08)),prog=Math.min(1,base+boost[i]*Math.min(1,(d-1)/29+.2)),exp=(d-1)/29;tot+=prog;
+    lis[i].querySelector('i.r').style.width=prog*100+'%';const gap=exp-prog,c=d<6?'G':gap>.28?'R':gap>.13?'A':'G',b=lis[i].querySelector('.pill');b.className='pill '+c;b.textContent={G:'On track',A:'Chase',R:'Escalate'}[c];b.disabled=c==='G'});
+   q(t,'coll').textContent=Math.round(tot/PF.length*100)+'%';q(t,'day').textContent=Math.round(d);q(t,'dv').textContent=Math.round(d)};
+  t.addEventListener('click',e=>{const b=e.target.closest('.bars6 button');if(!b||b.disabled)return;const i=+b.closest('li').dataset.i;boost[i]=Math.min(.3,boost[i]+.1);lis[i].classList.add('sent');
+   q(t,'etanote').textContent='Reminder sent to the '+PF[i][0]+' HOD; their committed collections move up.';draw(+dI.value)});
+  dI.addEventListener('input',()=>{stop();draw(+dI.value)});
+  draw(1);onFirstView(t,()=>{stop=anim(3200,p=>{const d=1+p*21;dI.value=Math.round(d);draw(d)})});
+ })(document.getElementById('d-eta'));
+})();
 </script>
 </body>
 </html>
