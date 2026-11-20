@@ -164,6 +164,21 @@ img{max-width:100%;display:block}
 @media (max-width:1060px){.certs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.certs{grid-template-columns:1fr}}
 .tell{max-width:68ch}.tell p{color:var(--ink2);font-size:1.04rem;line-height:1.72;margin:0 0 14px}
+.impact{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px;margin-top:18px}
+.impact>div{background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:22px 24px}
+.impact .lbl{font-size:.84rem;color:var(--muted);margin:0 0 8px}
+.tick .big{font-family:"Fraunces",serif;font-size:clamp(2.4rem,5vw,3.6rem);color:var(--gold-ink);margin:0;line-height:1.05;font-variant-numeric:tabular-nums}
+.tick .big small{font-size:.4em;color:var(--ink2)}
+.tick .note{font-size:.86rem;color:var(--muted);margin:12px 0 0}
+.bar{display:grid;grid-template-columns:9.5rem minmax(0,1fr) 4.6rem;gap:12px;align-items:center;margin:12px 0}
+.bn{font-size:.88rem;color:var(--ink)}.bv{font-size:.84rem;color:var(--ink2);text-align:right;font-variant-numeric:tabular-nums}
+.bt{position:relative;height:22px;background:var(--line2);border-radius:6px;overflow:hidden}
+.bt i{position:absolute;left:0;top:0;bottom:0;width:var(--w);border-radius:6px;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.bt i.b0{background:rgba(255,94,79,.55)}.bt i.b1{background:var(--gold);height:10px;top:6px}
+.js .bars:not(.on) .bt i{width:0}
+.key{font-size:.8rem;color:var(--muted);margin:14px 0 0;display:flex;gap:8px;align-items:center}
+.key i{display:inline-block;width:12px;height:12px;border-radius:3px}.key i.b0{background:rgba(255,94,79,.55)}.key i.b1{background:var(--gold);margin-left:10px}
+.orv .figs .fig b{color:var(--coral)}
 /* paytm ledger */
 .ledger{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line2);border-radius:16px;overflow:hidden;font-size:.93rem}
 .ledger th{text-align:left;font-size:.8rem;font-weight:600;color:var(--muted);padding:12px 16px;border-bottom:1px solid var(--line);background:var(--card2)}
@@ -277,6 +292,8 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
 
 @media (max-width:1060px){.caps{grid-template-columns:repeat(2,minmax(0,1fr))}.habits{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:960px){
+  .impact{grid-template-columns:1fr}
+  .bar{grid-template-columns:7.5rem minmax(0,1fr) 4rem}
   .top nav{display:none}
   .portrait{justify-self:start;max-width:280px}
   .jd li{grid-template-columns:1fr;gap:4px}.jd .go{text-align:left}
@@ -314,7 +331,7 @@ h1,h2,.claim{text-wrap:balance}
 
 <header class="top" id="top"><div class="wrap">
   <a class="brand" href="#hero">Tarana Bansal<i>.</i></a>
-  <nav aria-label="Sections"><a href="#about">About me</a><a href="#bring">Skills</a><a href="#paytm">Paytm</a><a href="#work">Projects</a><a href="#studio">Live models</a><a href="#certs">Certifications</a></nav>
+  <nav aria-label="Sections"><a href="#paytm">Paytm</a><a href="#work">Projects</a><a href="#studio">Live models</a><a href="#bring">Skills</a><a href="#about">About me</a><a href="#certs">Certifications</a></nav>
   <button class="tt" id="tt" type="button" aria-label="Switch between dark and light mode"><svg><use href="#moon"/></svg><span id="ttl">Light</span></button>
   <a class="btn" href="Tarana_Bansal_Resume.pdf" download><svg><use href="#dl"/></svg>Résumé</a>
 </div></header>
@@ -341,48 +358,17 @@ h1,h2,.claim{text-wrap:balance}
 </section>
 
 
-<section class="sec" id="about"><div class="wrap">
-  <div class="head"><p class="eyebrow">About me</p><h2>Why I chose English first, and finance next</h2></div>
-  <div class="tell">
-    <p>I have always been a go-getter who keeps learning. At school I was a subject topper with equally strong marks across every subject, and finished with 90.8% in Class XII and 89.2% in Class X.</p>
-    <p>B.Com (Hons) was the obvious next step. I chose English Honours at Delhi University instead, because I wanted a more varied lens and to understand the world from other people's perspectives. Those three years taught me to structure my thinking, tell a clear story with evidence, manage stakeholders and lead a room; they also cured my stage fright.</p>
-    <p>An MBA was always the final step, for the financial literacy to go with it. My PGDM in Finance and Analytics at Great Lakes Gurgaon gives me that, and at Paytm the two came together: the numbers from finance, the people and the writing from English.</p>
-  </div>
-  <div class="cols" style="margin-top:34px">
-    <div><h3>Earlier roles</h3><ul>
-      <li><b>CRM and Accounts Manager</b>, Perfect Solutions <small>2024: customer follow-ups and company accounts; retention up 12%</small></li>
-      <li><b>AI and Coding Instructor</b>, APS Noida with Rotary International <small>Dec 2023 to Apr 2024: taught Class 7 students</small></li>
-      <li><b>Founder and operator</b>, Loaded Nachos stall <small>2025: three price points tested, 23% net profit</small></li>
-      <li><b>Store Manager</b>, Haryana Electricals <small>2021: ordering, sales and daily cash reconciliation</small></li></ul></div>
-    <div><h3>Leadership and activities</h3><ul>
-      <li><b>Treasurer</b>, Self Interest Club, GLIM-G <small>2026: budgeting and financial oversight</small></li>
-      <li><b>Led a 15-member team</b> running a 3-day festival <small>2,000+ attendees, end-to-end logistics</small></li>
-      <li><b>Brought a recruiter</b> to GLIM-G's internship drive <small>through my own outreach</small></li>
-      <li><b>Top 15</b>, Crest x Grant Thornton case competition</li>
-      <li><b>Volunteer</b>, Sanatan Dharma Organisation <small>orphanage welfare</small></li></ul></div>
-    <div><h3>Interests and personality</h3><ul>
-      <li><b>Reading</b> <small>across fiction, business and finance</small></li>
-      <li><b>Badminton</b></li>
-      <li><b>Building with AI</b> <small>from teaching Class 7 coding to co-building Paytm's ticketing system</small></li>
-      <li><b>Languages</b> <small>English and Hindi</small></li></ul></div>
-    <div><h3>On LinkedIn</h3><ul>
-      <li>My write-up of the Paytm automations reached <b>95,925 impressions</b>, and was liked by Paytm</li>
-      <li><a href="https://www.linkedin.com/in/tarana-bansal-030769209" target="_blank" rel="noopener">Connect with me on LinkedIn</a></li></ul></div>
-    <div><h3>Education</h3><ul>
-      <li><b>PGDM, Finance and Analytics</b>, Great Lakes Institute of Management, Gurgaon <small>2025 to 2027</small></li>
-      <li><b>B.A. (Hons) English</b>, Maharaja Agrasen College, University of Delhi <small>2024</small></li>
-      <li><b>Class XII 90.8%, Class X 89.2%</b>, St. Mary's Sr. Sec. School, Delhi <small>Academic Excellence Award; subject topper in IP and English</small></li></ul></div>
-  </div>
-</div></section>
 
-<section class="sec alt" id="bring"><div class="wrap">
-  <div class="head"><p class="eyebrow">What I bring</p><h2>Each skill, backed by real work</h2><p>Each line links to the work on this page.</p></div>
-  <div class="jd"><h3>Finance, reporting and control</h3><ul><li><span class="req">Financial tracking, reporting and governance</span><span class="ev">Maintained the Executive Debtors Dashboard behind Paytm's monthly leadership MIS: ageing, DSO, provisioning and collection against target.</span><a class="go" href="#paytm">Paytm</a></li><li><span class="req">Management reports, dashboards, trackers and presentations</span><span class="ev">A VBA engine that writes the MIS commentary (4 hours to under a minute); a four-page Power BI controls dashboard; leadership decks and memos.</span><a class="go" href="#paytm">Frameworks</a></li><li><span class="req">Trends, variances, risks and revenue or cost leakage</span><span class="ev">Flagged ₹25.5 Cr across 1,152 exceptions, including ₹1.9 Cr of duplicate payments; my diligence memo on an engineering and construction major flags unbilled work growing faster than revenue.</span><a class="go" href="#work">Controls</a></li><li><span class="req">Budgeting, forecasting, margins, billing follow-up and reconciliations</span><span class="ev">Owned 10% of the team's collection target; automated billing recovery notices (83% faster); reconciled the debtor book to a ₹4.7 Cr GL balance.</span><a class="go" href="#paytm">Paytm</a></li><li><span class="req">Coordination with delivery, finance, sales and workforce teams</span><span class="ev">Worked daily with business leads, HODs and POD leads; one-click updates replaced four rounds of manual emails each cycle.</span><a class="go" href="#paytm">Paytm</a></li><li><span class="req">Resource, demand, utilisation and hiring reporting</span><span class="ev">Modelled in the business review cockpit: utilisation, bench, open demand and timesheet compliance by month.</span><a class="go" href="#studio">Cockpit</a></li><li><span class="req">Process documentation, SOPs and governance records</span><span class="ev">Documented all five Paytm frameworks step by step in a 40-page report, and recommended an automation SOP.</span><a class="go" href="#paytm">Report</a></li><li><span class="req">Data validation, audits and compliance</span><span class="ev">Merged 23 trackers into one version of the truth; an approval trail on every recovery notice; six procure-to-pay control tests; COBIT 2019.</span><a class="go" href="#work">Controls</a></li><li><span class="req">Automation, analytics and AI-enabled improvement</span><span class="ev">VBA, Apps Script, Python and Power BI in live use; a ticketing system built with Claude Code; a Gen AI reconciliation workflow.</span><a class="go" href="#paytm">Frameworks</a></li></ul></div><div class="jd"><h3>Project governance</h3><ul><li><span class="req">Project plans, milestones, resource trackers and RAID logs</span><span class="ev">CareerCompass AI in MS Project: work breakdown, a 19-activity critical path, resource levelling and a scored risk register.</span><a class="go" href="#work">CareerCompass</a></li><li><span class="req">Status reports, governance dashboards and meeting packs</span><span class="ev">A weekly-to-monthly cadence ending in a steering report; the governance desk here drafts the weekly status note.</span><a class="go" href="#studio">Governance desk</a></li><li><span class="req">Schedule, effort and budget against baselines</span><span class="ev">Earned value at week 20 (CPI 0.94, SPI 0.95) triggered a correction; crashed the schedule from 31 to 29 weeks.</span><a class="go" href="#work">CareerCompass</a></li><li><span class="req">Action closure, change control and escalation</span><span class="ev">Paytm ticketing gave every action an owner, an ETA and an escalation path; CareerCompass sent changes above ₹1 lakh to a steering committee.</span><a class="go" href="#paytm">Ticketing</a></li><li><span class="req">Templates, repositories and lessons learned</span><span class="ev">Standardised 23 trackers into one format; a closure checklist and lessons learned in CareerCompass.</span><a class="go" href="#work">CareerCompass</a></li></ul></div><div class="jd"><h3>Business and process analysis</h3><ul><li><span class="req">Requirements gathering and recommended solutions</span><span class="ev">Turned the GM's brief into a role-based ticketing system the whole team adopted.</span><a class="go" href="#paytm">Ticketing</a></li><li><span class="req">Business process analysis and improvement</span><span class="ev">Timed every receivables step before changing it; root-caused a 65% cycle-time variation in the Crest x Grant Thornton case.</span><a class="go" href="#work">Case</a></li><li><span class="req">Manufacturing and construction domain</span><span class="ev">A ten-year valuation and diligence memo on an engineering, construction and manufacturing group; a feasibility study for a Grade A warehousing park; procure-to-pay controls.</span><a class="go" href="#work">Finance work</a></li><li><span class="req">Documentation, presentations and insights</span><span class="ev">A 40-page internship report, a diligence memo, an equity initiation and case decks.</span><a class="go" href="#work">Work</a></li></ul></div>
-  <div class="jd tools"><h3>Skills and tools</h3><div class="chips"><span>Advanced Excel and VBA</span><span>PowerPoint</span><span>Word</span><span>SAP (cash application, GL)</span><span>Power BI</span><span>Python</span><span>MS Project</span><span>Google Apps Script</span><span>Claude Code and Gen AI</span></div>
-  <p class="learn"><b>Learning now:</b> SAP Professional Fundamentals (in progress), then SAP Activate and S/4HANA finance; Jira and SharePoint at a working level.</p></div>
-</div></section>
 
-<section class="sec" id="paytm"><div class="wrap">
+
+
+
+
+
+
+
+
+<section class="sec alt" id="paytm"><div class="wrap">
   <div class="head"><p class="eyebrow">Paytm, April to June 2026</p><h2>I timed the work first. Then I automated it.</h2><p>Revenue Assurance Intern at One97 Communications, Noida, reporting to the General Manager, Revenue Assurance and Collections. I spent my first two weeks timing every step of the team's receivables work: the data sat in SAP exports, personal trackers and shared sheets, and each review began with two days of compiling.</p></div>
   <div class="tw"><table class="ledger">
     <thead><tr><th scope="col">Framework and who uses it</th><th scope="col">Before</th><th scope="col">What I built</th><th scope="col">Result</th></tr></thead>
@@ -394,7 +380,15 @@ h1,h2,.claim{text-wrap:balance}
       <tr><td>Ticketing system<small>GM and the full collections team</small></td><td data-label="Before">Follow-ups held in memory</td><td data-label="What I built">Co-built with Claude Code: an owner, an ETA and an escalation path for every action</td><td class="gain" data-label="Result">Clear ownership</td></tr>
     </tbody>
   </table></div>
-  <p class="total"><b>~80 hours a month freed</b> All of it timed against baselines from my first two weeks and checked over the April and May 2026 cycles. Presented to every Revenue Assurance team at Paytm's Automation Friday.</p>
+  <div class="impact">
+    <div class="tick"><p class="lbl">Manual work freed since handover, counting live</p><p class="big"><span id="hrs">0</span><small> hrs</small></p><p class="note">At ~80 hours a month across the five frameworks, timed against my first-two-week baselines and checked over the April and May 2026 cycles. Presented to every Revenue Assurance team at Paytm's Automation Friday.</p></div>
+    <div class="bars" id="bars"><p class="lbl">Hours a month on four routine tasks</p>
+      <div class="bar"><span class="bn">Recovery notices</span><span class="bt"><i class="b0" style="--w:100%"></i><i class="b1" style="--w:17%"></i></span><span class="bv">40 → 6.7</span></div>
+      <div class="bar"><span class="bn">ETA vs collections</span><span class="bt"><i class="b0" style="--w:80%"></i><i class="b1" style="--w:5%"></i></span><span class="bv">32 → 2</span></div>
+      <div class="bar"><span class="bn">Stakeholder emails</span><span class="bt"><i class="b0" style="--w:20%"></i><i class="b1" style="--w:1.5%"></i></span><span class="bv">8 → &lt;1</span></div>
+      <div class="bar"><span class="bn">MIS commentary</span><span class="bt"><i class="b0" style="--w:10%"></i><i class="b1" style="--w:.5%"></i></span><span class="bv">4 → 0.02</span></div>
+      <p class="key"><i class="b0"></i>Before <i class="b1"></i>After</p></div>
+  </div>
   <div class="pay2">
     <div class="panel"><h3>Daily cash application in SAP</h3><p class="note">The debtors book matched a ₹4.7 Cr GL balance in March 2026.</p>
       <ol class="steps"><li><b>1</b>Customer payment</li><li><b>2</b>Bank receipt</li><li><b>3</b>UTR as the key</li><li><b>4</b>Invoice mapping</li><li><b>5</b>TDS check</li><li><b>6</b>Short or excess allocated</li><li><b>7</b>GL reconciliation</li><li><b>8</b>Receivable closed</li></ol></div>
@@ -404,11 +398,7 @@ h1,h2,.claim{text-wrap:balance}
   </div>
 </div></section>
 
-
-
-
-
-<section class="sec alt" id="work"><div class="wrap">
+<section class="sec" id="work"><div class="wrap">
   <div class="head"><p class="eyebrow">Projects</p><h2>Models, memos and plans you can open</h2></div>
   <h3 class="group">Finance</h3>
   <div class="wk">
@@ -443,10 +433,17 @@ h1,h2,.claim{text-wrap:balance}
       <p class="did"><b>What I did:</b> built a workflow that reads payment emails, matches them to receipts and updates the tracker, with written rules for partial payments and a person for anything unmatched; and ten research prompts, each ending with a check I run myself.</p>
       <div class="files"><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/Financial_Research_Prompt_Library.pdf" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Prompt library <small>PDF</small></a></div></article>
   </div>
-  <p class="total" style="margin-top:22px">Also built: <a href="https://taranapgdm27g-png.github.io/financial-advisory/orvelle.html#/home" target="_blank" rel="noopener">Orvelle</a>, a D2C store with its own finance studio, and <a href="https://taranapgdm27g-png.github.io/financial-advisory/" target="_blank" rel="noopener">nine live finance desks</a> from M&amp;A to project finance.</p>
+  <h3 class="group">Built from scratch</h3>
+  <div class="wk">
+    <article class="w wide orv"><span class="tag">Live business and finance studio</span><h3>Orvelle: a D2C fashion brand, from first tap to cap table</h3><p class="meta">Independent build, October 2026: a working mobile store and the finance studio behind it</p>
+      <p class="did"><b>What I did:</b> built a working store whose every order feeds a live finance studio: a cohort-driven operating model (acquisition spend, CAC, repeat behaviour), unit economics, three statements, a DCF against market multiples, working capital from inventory, receivable and payable days, a cap table and an LBO. Then I wrote the investor teaser for a ₹20 crore growth raise.</p>
+      <div class="figs"><div class="fig"><b>2.47x</b><span>LTV to CAC, payback in about a month</span></div><div class="fig"><b>Month 6</b><span>EBITDA turns positive on plan</span></div><div class="fig"><b>21%</b><span>of new buyers order again next month</span></div><div class="fig"><b>₹13.2 to ₹53.9 Cr</b><span>net revenue in five years, base case</span></div></div>
+      <div class="files"><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/orvelle.html#/home" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Open the store <small>Live</small></a><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/orvelle.html#/admin/finance" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Open the finance studio <small>Live</small></a><a class="file" href="https://taranapgdm27g-png.github.io/financial-advisory/Project_Orvelle_Teaser.pdf" target="_blank" rel="noopener"><svg><use href="#doc"/></svg>Investor teaser <small>PDF</small></a></div></article>
+  </div>
+  <p class="total" style="margin-top:22px;display:block">Also live: <a href="https://taranapgdm27g-png.github.io/financial-advisory/" target="_blank" rel="noopener">nine finance desks</a>, from M&amp;A and project finance to portfolio optimisation.</p>
 </div></section>
 
-<section class="sec" id="studio"><div class="wrap">
+<section class="sec alt" id="studio"><div class="wrap">
   <div class="head"><p class="eyebrow">Live models</p><h2>Change one input and watch the review rewrite itself</h2><p>Three working models I built: a monthly business review, the weekly programme governance pack and an order-to-cash process in a factory. The data is illustrative; change an input and every number, flag and line of commentary updates.</p></div>
   <div class="studio">
     <div class="tabs" role="tablist" aria-label="Models">
@@ -460,15 +457,56 @@ h1,h2,.claim{text-wrap:balance}
   </div>
 </div></section>
 
-<section class="sec alt" id="certs"><div class="wrap">
+<section class="sec" id="bring"><div class="wrap">
+  <div class="head"><p class="eyebrow">What I bring</p><h2>Each skill, backed by real work</h2><p>Each line links to the work on this page.</p></div>
+  <div class="jd"><h3>Finance, reporting and control</h3><ul><li><span class="req">Financial tracking, reporting and governance</span><span class="ev">Maintained the Executive Debtors Dashboard behind Paytm's monthly leadership MIS: ageing, DSO, provisioning and collection against target.</span><a class="go" href="#paytm">Paytm</a></li><li><span class="req">Management reports, dashboards, trackers and presentations</span><span class="ev">A VBA engine that writes the MIS commentary (4 hours to under a minute); a four-page Power BI controls dashboard; leadership decks and memos.</span><a class="go" href="#paytm">Frameworks</a></li><li><span class="req">Trends, variances, risks and revenue or cost leakage</span><span class="ev">Flagged ₹25.5 Cr across 1,152 exceptions, including ₹1.9 Cr of duplicate payments; my diligence memo on an engineering and construction major flags unbilled work growing faster than revenue.</span><a class="go" href="#work">Controls</a></li><li><span class="req">Budgeting, forecasting, margins, billing follow-up and reconciliations</span><span class="ev">Owned 10% of the team's collection target; automated billing recovery notices (83% faster); reconciled the debtor book to a ₹4.7 Cr GL balance.</span><a class="go" href="#paytm">Paytm</a></li><li><span class="req">Coordination with delivery, finance, sales and workforce teams</span><span class="ev">Worked daily with business leads, HODs and POD leads; one-click updates replaced four rounds of manual emails each cycle.</span><a class="go" href="#paytm">Paytm</a></li><li><span class="req">Resource, demand, utilisation and hiring reporting</span><span class="ev">Modelled in the business review cockpit: utilisation, bench, open demand and timesheet compliance by month.</span><a class="go" href="#studio">Cockpit</a></li><li><span class="req">Process documentation, SOPs and governance records</span><span class="ev">Documented all five Paytm frameworks step by step in a 40-page report, and recommended an automation SOP.</span><a class="go" href="#paytm">Report</a></li><li><span class="req">Data validation, audits and compliance</span><span class="ev">Merged 23 trackers into one version of the truth; an approval trail on every recovery notice; six procure-to-pay control tests; COBIT 2019.</span><a class="go" href="#work">Controls</a></li><li><span class="req">Automation, analytics and AI-enabled improvement</span><span class="ev">VBA, Apps Script, Python and Power BI in live use; a ticketing system built with Claude Code; a Gen AI reconciliation workflow.</span><a class="go" href="#paytm">Frameworks</a></li></ul></div><div class="jd"><h3>Project governance</h3><ul><li><span class="req">Project plans, milestones, resource trackers and RAID logs</span><span class="ev">CareerCompass AI in MS Project: work breakdown, a 19-activity critical path, resource levelling and a scored risk register.</span><a class="go" href="#work">CareerCompass</a></li><li><span class="req">Status reports, governance dashboards and meeting packs</span><span class="ev">A weekly-to-monthly cadence ending in a steering report; the governance desk here drafts the weekly status note.</span><a class="go" href="#studio">Governance desk</a></li><li><span class="req">Schedule, effort and budget against baselines</span><span class="ev">Earned value at week 20 (CPI 0.94, SPI 0.95) triggered a correction; crashed the schedule from 31 to 29 weeks.</span><a class="go" href="#work">CareerCompass</a></li><li><span class="req">Action closure, change control and escalation</span><span class="ev">Paytm ticketing gave every action an owner, an ETA and an escalation path; CareerCompass sent changes above ₹1 lakh to a steering committee.</span><a class="go" href="#paytm">Ticketing</a></li><li><span class="req">Templates, repositories and lessons learned</span><span class="ev">Standardised 23 trackers into one format; a closure checklist and lessons learned in CareerCompass.</span><a class="go" href="#work">CareerCompass</a></li></ul></div><div class="jd"><h3>Business and process analysis</h3><ul><li><span class="req">Requirements gathering and recommended solutions</span><span class="ev">Turned the GM's brief into a role-based ticketing system the whole team adopted.</span><a class="go" href="#paytm">Ticketing</a></li><li><span class="req">Business process analysis and improvement</span><span class="ev">Timed every receivables step before changing it; root-caused a 65% cycle-time variation in the Crest x Grant Thornton case.</span><a class="go" href="#work">Case</a></li><li><span class="req">Manufacturing and construction domain</span><span class="ev">A ten-year valuation and diligence memo on an engineering, construction and manufacturing group; a feasibility study for a Grade A warehousing park; procure-to-pay controls.</span><a class="go" href="#work">Finance work</a></li><li><span class="req">Documentation, presentations and insights</span><span class="ev">A 40-page internship report, a diligence memo, an equity initiation and case decks.</span><a class="go" href="#work">Work</a></li></ul></div>
+  <div class="jd tools"><h3>Skills and tools</h3><div class="chips"><span>Advanced Excel and VBA</span><span>PowerPoint</span><span>Word</span><span>SAP (cash application, GL)</span><span>Power BI</span><span>Python</span><span>MS Project</span><span>Google Apps Script</span><span>Claude Code and Gen AI</span></div>
+  <p class="learn"><b>Learning now:</b> SAP Professional Fundamentals (in progress), then SAP Activate and S/4HANA finance; Jira and SharePoint at a working level.</p></div>
+</div></section>
+
+<section class="sec alt" id="about"><div class="wrap">
+  <div class="head"><p class="eyebrow">About me</p><h2>Why I chose English first, and finance next</h2></div>
+  <div class="tell">
+    <p>I have always been a go-getter who keeps learning. At school I was a subject topper with equally strong marks across every subject, and finished with 90.8% in Class XII and 89.2% in Class X.</p>
+    <p>B.Com (Hons) was the obvious next step. I chose English Honours at Delhi University instead, because I wanted a more varied lens and to understand the world from other people's perspectives. Those three years taught me to structure my thinking, tell a clear story with evidence, manage stakeholders and lead a room; they also cured my stage fright.</p>
+    <p>An MBA was always the final step, for the financial literacy to go with it. My PGDM in Finance and Analytics at Great Lakes Gurgaon gives me that, and at Paytm the two came together: the numbers from finance, the people and the writing from English.</p>
+  </div>
+  <div class="cols" style="margin-top:34px">
+    <div><h3>Earlier roles</h3><ul>
+      <li><b>CRM and Accounts Manager</b>, Perfect Solutions <small>2024: customer follow-ups and company accounts; retention up 12%</small></li>
+      <li><b>AI and Coding Instructor</b>, APS Noida with Rotary International <small>Dec 2023 to Apr 2024: taught Class 7 students</small></li>
+      <li><b>Founder and operator</b>, Loaded Nachos stall <small>2025: three price points tested, 23% net profit</small></li>
+      <li><b>Store Manager</b>, Haryana Electricals <small>2021: ordering, sales and daily cash reconciliation</small></li></ul></div>
+    <div><h3>Leadership and activities</h3><ul>
+      <li><b>Treasurer</b>, Self Interest Club, GLIM-G <small>2026: budgeting and financial oversight</small></li>
+      <li><b>Led a 15-member team</b> running a 3-day festival <small>2,000+ attendees, end-to-end logistics</small></li>
+      <li><b>Brought a recruiter</b> to GLIM-G's internship drive <small>through my own outreach</small></li>
+      <li><b>Top 15</b>, Crest x Grant Thornton case competition</li>
+      <li><b>Volunteer</b>, Sanatan Dharma Organisation <small>orphanage welfare</small></li></ul></div>
+    <div><h3>Interests and personality</h3><ul>
+      <li><b>Reading</b> <small>across fiction, business and finance</small></li>
+      <li><b>Badminton</b></li>
+      <li><b>Building with AI</b> <small>from teaching Class 7 coding to co-building Paytm's ticketing system</small></li>
+      <li><b>Languages</b> <small>English and Hindi</small></li></ul></div>
+    <div><h3>On LinkedIn</h3><ul>
+      <li>My write-up of the Paytm automations reached <b>95,925 impressions</b>, and was liked by Paytm</li>
+      <li><a href="https://www.linkedin.com/in/tarana-bansal-030769209" target="_blank" rel="noopener">Connect with me on LinkedIn</a></li></ul></div>
+    <div><h3>Education</h3><ul>
+      <li><b>PGDM, Finance and Analytics</b>, Great Lakes Institute of Management, Gurgaon <small>2025 to 2027</small></li>
+      <li><b>B.A. (Hons) English</b>, Maharaja Agrasen College, University of Delhi <small>2024</small></li>
+      <li><b>Class XII 90.8%, Class X 89.2%</b>, St. Mary's Sr. Sec. School, Delhi <small>Academic Excellence Award; subject topper in IP and English</small></li></ul></div>
+  </div>
+</div></section>
+
+<section class="sec" id="certs"><div class="wrap">
   <div class="head"><p class="eyebrow">Certifications</p><h2>Twenty certificates and simulations, and counting</h2></div>
   <div class="certs"><div class="cg"><h3>SAP and project delivery</h3><ul><li><div><b>SAP Professional Fundamentals</b><small>SAP, Coursera</small></div><span class="st p">In progress</span></li><li><div><b>Google Project Management Professional Certificate</b><small>Google, Coursera</small></div><span class="st e">Earned</span></li><li><div><b>Lean Six Sigma Green Belt</b><small>Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>COBIT 2019 Foundation</b><small>IT governance, Coursera, 2026</small></div><span class="st e">Earned</span></li></ul></div><div class="cg"><h3>Finance and valuation</h3><ul><li><div><b>Equity Research and Financial Modeling Analyst</b><small>FLP live project: Dabur India, 12 weeks</small></div><span class="st e">Earned</span></li><li><div><b>Financial Statement Analysis and Valuation</b><small>Great Lakes PGDM core course: L&T valuation presented</small></div><span class="st e">Earned</span></li><li><div><b>Financial Markets</b><small>Yale University, Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>FinTech: Foundations, Payments and Regulations</b><small>Wharton, 2026</small></div><span class="st e">Earned</span></li><li><div><b>Excel Financial Modeling Mastery: In-Depth Training</b><small>Coursera</small></div><span class="st p">In progress</span></li></ul></div><div class="cg"><h3>Data, analytics and AI</h3><ul><li><div><b>Power BI Data Analyst Professional Certificate</b><small>Microsoft, 2026, 20 weeks</small></div><span class="st e">Earned</span></li><li><div><b>Google Data Analytics Professional Certificate</b><small>Google, 2026, 26 weeks</small></div><span class="st e">Earned</span></li><li><div><b>Python Core to Advanced</b><small>Pregrad</small></div><span class="st e">Earned</span></li></ul></div><div class="cg"><h3>Business, product and clients</h3><ul><li><div><b>Digital Product Management Specialization</b><small>Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>Advanced Customer Relationship Management</b><small>Microsoft, Coursera, 2026</small></div><span class="st e">Earned</span></li><li><div><b>Sales and Marketing Leadership Program</b><small>Live project</small></div><span class="st p">In progress</span></li></ul></div><div class="cg"><h3>Job simulations (Forage)</h3><ul><li><div><b>Investment Banking</b><small>J.P. Morgan</small></div><span class="st e">Completed</span></li><li><div><b>Quantitative Research</b><small>J.P. Morgan</small></div><span class="st e">Completed</span></li><li><div><b>Markets Sales and Trading</b><small>Citi</small></div><span class="st e">Completed</span></li><li><div><b>Investment Banking</b><small>Bank of America</small></div><span class="st e">Completed</span></li><li><div><b>Credit Analyst</b><small>Standard Chartered</small></div><span class="st e">Completed</span></li></ul></div></div>
 </div></section>
 
 <section class="sec contact" id="contact"><div class="wrap">
   <p class="eyebrow">Contact</p><h2>Let's talk.</h2>
-  <p style="color:var(--ink2);font-size:1.06rem;max-width:60ch;margin-top:14px">I'd be glad to walk you through any model on this page, or how I'd spend my first month in your team.</p>
-  <div class="ways"><a class="btn" href="mailto:tarana.pgdm27g@greatlakes.edu.in">tarana.pgdm27g@greatlakes.edu.in</a><a class="btn ghost" href="tel:+919958262885">+91 99582 62885</a><a class="btn ghost" href="https://www.linkedin.com/in/tarana-bansal-030769209" target="_blank" rel="noopener">LinkedIn</a><a class="btn ghost" href="Tarana_Bansal_Resume.pdf" download>Download résumé</a></div>
+  <p style="color:var(--ink2);font-size:1.06rem;max-width:60ch;margin-top:14px">Thank you for your time. If anything here is worth a conversation, I would be glad to walk you through it, model by model.</p>
+  <div class="ways"><a class="btn" href="mailto:tarana.pgdm27g@greatlakes.edu.in">tarana.pgdm27g@greatlakes.edu.in</a><a class="btn ghost" href="tel:+919958262885">+91 99582 62885</a><a class="btn ghost" href="https://www.linkedin.com/in/tarana-bansal-030769209" target="_blank" rel="noopener">LinkedIn</a></div>
 </div></section>
 </main>
 <footer><div class="wrap">Tarana Bansal, PGDM 2027, Great Lakes Gurgaon. The Ops Studio and the controls project use illustrative or synthetic data, and the names in them are fictional. Company and market figures come from the filings and market reports cited in each document. A personal portfolio.</div></footer>
@@ -576,6 +614,19 @@ DESK.o2c=function(box){
     const h=S[hot];$('#cmemo').innerHTML=`<p><b>Finding.</b> ${h[0].replace(/ \(.*\)/,'')} is now the longest step: ${g1(aft[hot])} hours, ${Math.round(aft[hot]/A*100)}% of the cycle.</p>`+(on[hot]?'<p class="g">It is already fixed, so the next gain sits in the hand-offs around it.</p>':`<p><b>Next requirement:</b> ${h[2]}, saving about ${g1(h[1]*(1-h[3]))} hours an order.</p>`)}
   draw();REDRAW.o2c=draw};
 show('ops');
+
+(()=>{const el=document.getElementById('hrs');if(!el)return;const t0=Date.UTC(2026,6,1),rate=80/(30.4375*864e5);
+ const f=()=>{el.textContent=((Date.now()-t0)*rate).toLocaleString('en-IN',{minimumFractionDigits:4,maximumFractionDigits:4})};
+ f();setInterval(f,RM?60000:120)})();
+(()=>{const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);
+  if(e.target.id==='bars'){e.target.classList.add('on');return}
+  const n=e.target,txt=n.dataset.t,m=txt.match(/\d[\d,]*\.?\d*/);if(!m)return;
+  const raw=m[0].replace(/,/g,''),dec=(raw.split('.')[1]||'').length,end=parseFloat(raw),pre=txt.slice(0,m.index),post=txt.slice(m.index+m[0].length),comma=m[0].includes(',');
+  const t1=performance.now(),D=1100;const step=now=>{const p=Math.min(1,(now-t1)/D),v=end*(1-Math.pow(1-p,3));
+   let s=v.toFixed(dec);if(comma)s=Number(s).toLocaleString('en-IN',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+   n.textContent=pre+s+post;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}),{threshold:.4});
+ const b=document.getElementById('bars');if(b)io.observe(b);
+ if(!RM)$$('.facts b,.fig b,.ledger td.gain').forEach(n=>{if(!/\d/.test(n.textContent))return;n.dataset.t=n.textContent;io.observe(n)})})();
 </script>
 </body>
 </html>
